@@ -1,0 +1,18 @@
+# kagold 配置（命令行参数优先于这里的值）
+llm:
+  provider: huo          # huo / commandcode / open / open2 ...
+  model: deepseek-v4.1-flash
+
+max_steps: 140           # 单次 run 的最大模型轮数
+max_hours: 8             # 单次 run 的墙钟上限
+max_submissions: 6       # 单次 run 允许的真实提交次数
+max_tokens_in: 4000000
+max_tokens_out: 500000
+max_shell_seconds: 1800  # 单条 shell 命令超时
+min_free_gb: 3           # 磁盘守卫：低于此值停止下载/停止运行
+temperature: 0.25
+allow_accept_rules: false   # 是否允许 agent 自动接受竞赛规则
+allow_public_notebooks: false
+
+max_total_steps: 600    # 累计硬上限（防无限续跑）
+max_total_hours: 24.0   # 累计硬上限

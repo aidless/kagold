@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# kagold 启动器：不依赖 pip 安装，直接跑 src/ 下的代码。
+# 注意：不要用 PYTHONPATH 传工作区路径——本工作区根目录字面含反斜杠，
+# python 解析 PYTHONPATH 时会把它当转义符（实测 sys.path 被切碎）。
+set -euo pipefail
+HERE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+cd "$HERE/../src"
+exec python3 -m kagold.cli "$@"

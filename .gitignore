@@ -1,0 +1,12 @@
+runs/
+__pycache__/
+*.pyc
+llm.log
+reports/cron.log
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
